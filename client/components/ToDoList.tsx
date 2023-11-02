@@ -32,6 +32,20 @@ function ToDoList() {
     setTodos(newTodos)
   }
 
+  function toggleCompleted(id: number) {
+    const newTodos = [...todos].map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          completed: !todo.completed,
+        }
+      } else {
+        return todo
+      }
+    })
+    setTodos(newTodos)
+  }
+
   return (
     <div className="toDoContainer">
       <div className="noteTitle">
@@ -42,7 +56,12 @@ function ToDoList() {
         {todos.map((todo) => (
           <>
             <li key={todo.id}>
-              <button onClick={() => deleteTodo(todo.id)}>x</button> {todo.text}
+              <button onClick={() => deleteTodo(todo.id)}>x</button>
+              <button onClick={() => toggleCompleted(todo.id)}>
+                <span className={todo.completed ? 'toDoCompleted' : ''}>
+                  {todo.text}
+                </span>
+              </button>
             </li>
           </>
         ))}

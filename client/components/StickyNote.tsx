@@ -1,8 +1,12 @@
 import ToDoList from './ToDoList'
 
-function StickyNote() {
+type Props = {
+  color: string
+}
+
+function StickyNote(props: Props) {
   return (
-    <div className="stickyNote">
+    <div className={`stickyNote ${props.color}`}>
       <ToDoList />
     </div>
   )
