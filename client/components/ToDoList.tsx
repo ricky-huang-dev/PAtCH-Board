@@ -1,12 +1,35 @@
 import { useState } from 'react'
 
 function ToDoList() {
-  const [todos, setTodos] = useState(['Buy milk', 'Cook breakfast'])
+  const [todos, setTodos] = useState([
+    {
+      id: 0,
+      text: 'buy milk',
+      completed: false,
+    },
+
+    {
+      id: 1,
+      text: 'make breakfast',
+      completed: true,
+    },
+  ])
   const [todoText, setTodoText] = useState('')
 
   function handleAddTodo() {
-    setTodos([...todos, todoText])
+    const newTodo = {
+      id: todos.length,
+      text: todoText,
+      completed: false,
+    }
+
+    setTodos([...todos, newTodo])
     setTodoText('')
+  }
+
+  function deleteTodo(id: number) {
+    const newTodos = todos.filter((todo) => todo.id !== id)
+    setTodos(newTodos)
   }
 
   return (
@@ -16,10 +39,10 @@ function ToDoList() {
       </div>
 
       <div className="listItems">
-        {todos.map((item, index) => (
+        {todos.map((todo) => (
           <>
-            <li key={index}>
-              <button>x</button> {item}
+            <li key={todo.id}>
+              <button onClick={() => deleteTodo(todo.id)}>x</button> {todo.text}
             </li>
           </>
         ))}
