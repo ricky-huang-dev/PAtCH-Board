@@ -1,19 +1,17 @@
 import { useState } from 'react'
 
-function ToDoList() {
-  const [todos, setTodos] = useState([
-    {
-      id: 0,
-      text: 'buy milk',
-      completed: false,
-    },
+type Props = {
+  heading: string
+}
 
-    {
-      id: 1,
-      text: 'make breakfast',
-      completed: true,
-    },
-  ])
+type Todo = {
+  id: number
+  text: string
+  completed: boolean
+}
+
+function ToDoList(props: Props) {
+  const [todos, setTodos] = useState([] as Todo[])
   const [todoText, setTodoText] = useState('')
 
   function handleAddTodo() {
@@ -49,7 +47,7 @@ function ToDoList() {
   return (
     <div className="toDoContainer">
       <div className="noteTitle">
-        <h1>To Do List: </h1>
+        <h1>{props.heading}</h1>
       </div>
 
       <div className="listItems">
@@ -74,6 +72,7 @@ function ToDoList() {
           className="inputBar"
           type="text"
           name="todoText"
+          placeholder={`Add to ${props.heading.toLowerCase()} list`}
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
         />
