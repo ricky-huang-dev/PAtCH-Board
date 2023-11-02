@@ -8,10 +8,10 @@ function App() {
     <div>
       <Header />
       <Board>
-        <StickyNote />
-        <StickyNote />
-        <StickyNote />
-        <StickyNote />
+        <StickyNote color={'pink'} />
+        <StickyNote color={'blue'} />
+        <StickyNote color={'yellow'} />
+        <StickyNote color={'green'} />
       </Board>
       <Footer />
     </div>
