@@ -29,4 +29,39 @@ body {
   background: rgb(247, 80, 108);
   box-shadow: 5px 10px 10px black;
   transform: rotate(5deg);
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.stickyNote::-webkit-scrollbar {
+  display: none;
+}
+
+.toDoContainer {
+}
+
+.noteTitle {
+  text-align: center;
+}
+.listItems {
+  list-style-type: none;
+  margin: 10%;
+}
+
+.deleteButton {
+  border-radius: 50%;
+  border-color: rgb(243, 147, 147);
+}
+
+.inputBar {
+  border: none;
+  width: 130px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+.addButton {
+}
+
+.toDoCompleted {
+  text-decoration: line-through;
 }

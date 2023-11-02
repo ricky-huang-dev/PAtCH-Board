@@ -12,25 +12,27 @@ function ToDoList() {
   return (
     <div className="toDoContainer">
       <div className="noteTitle">
-        <h1>Hello World</h1>
+        <h1>To Do List: </h1>
       </div>
 
       <div className="listItems">
         {todos.map((item, index) => (
           <>
             <li key={index}>
-              <button>x</button> {item}
+              <button className="deleteButton">x</button> {item}
             </li>
           </>
         ))}
-
         <input
+          className="inputBar"
           type="text"
           name="todoText"
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
         />
-        <button onClick={handleAddTodo}>Add todo</button>
+        <button className="addButton" onClick={handleAddTodo}>
+          Add
+        </button>
       </div>
     </div>
   )
