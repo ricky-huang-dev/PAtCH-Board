@@ -3,3 +3,30 @@ body {
   color: #0a1520;
   font-family: 'Poppins', sans-serif;
 }
+
+.board {
+  border: #5a4423 solid 10px;
+  background-color: #faf8f1;
+  opacity: 0.8;
+  background-size: 30px 30px;
+  background-image: repeating-linear-gradient(
+    0deg,
+    #5a4423,
+    #5a4423 1px,
+    #f3e3cb 1px,
+    #f3e3cb
+  );
+  height: 100vh;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 5%;
+}
+
+.stickyNote {
+  height: 250px;
+  width: 250px;
+  background: rgb(247, 80, 108);
+  box-shadow: 5px 10px 10px black;
+  transform: rotate(5deg);
+}
