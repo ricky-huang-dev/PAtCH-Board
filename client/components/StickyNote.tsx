@@ -1,7 +1,9 @@
+import ToDoList from './ToDoList'
+
 function StickyNote() {
   return (
     <div className="stickyNote">
-      <h1>Hello World</h1>
+      <ToDoList />
     </div>
   )
 }
