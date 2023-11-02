@@ -1,8 +1,19 @@
+import Board from './Board'
+import Footer from './Footer'
+import Header from './Header'
+import StickyNote from './StickyNote'
+
 function App() {
   return (
     <div>
-      <h1>App</h1>
-      <p>React development has begun!</p>
+      <Header />
+      <Board>
+        <StickyNote />
+        <StickyNote />
+        <StickyNote />
+        <StickyNote />
+      </Board>
+      <Footer />
     </div>
   )
 }
