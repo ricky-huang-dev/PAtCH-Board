@@ -2,6 +2,9 @@ body {
   background-color: #faf8f1;
   color: #0a1520;
   font-family: 'Poppins', sans-serif;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .board {
@@ -22,13 +25,14 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 5%;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 .stickyNote {
   height: 250px;
   width: 250px;
-  background: rgb(247, 80, 108);
   box-shadow: 5px 10px 10px black;
-  transform: rotate(5deg);
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -36,10 +40,23 @@ body {
 .stickyNote::-webkit-scrollbar {
   display: none;
 }
-
-.toDoContainer {
+.pink {
+  background: rgb(247, 80, 108);
+  transform: rotate(5deg);
 }
 
+.blue {
+  background: rgb(146, 210, 240);
+  transform: rotate(5deg);
+}
+.yellow {
+  background: rgb(238, 243, 161);
+  transform: rotate(5deg);
+}
+.green {
+  background: rgb(201, 243, 161);
+  transform: rotate(5deg);
+}
 .noteTitle {
   text-align: center;
 }
@@ -55,11 +72,17 @@ body {
 
 .inputBar {
   border: none;
-  width: 130px;
+  height: 22px;
+  width: 140px;
   margin-top: 20px;
   margin-right: 10px;
+  border-radius: 5px;
 }
 .addButton {
+  font-family: 'Poppins', sans-serif;
+  border-color: rgb(243, 147, 147);
+
+  border-radius: 5px;
 }
 
 .toDoCompleted {
