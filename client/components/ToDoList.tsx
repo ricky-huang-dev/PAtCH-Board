@@ -49,14 +49,19 @@ function ToDoList() {
   return (
     <div className="toDoContainer">
       <div className="noteTitle">
-        <h1>Hello World</h1>
+        <h1>To Do List: </h1>
       </div>
 
       <div className="listItems">
         {todos.map((todo) => (
           <>
             <li key={todo.id}>
-              <button onClick={() => deleteTodo(todo.id)}>x</button>
+              <button
+                className="deleteButton"
+                onClick={() => deleteTodo(todo.id)}
+              >
+                x
+              </button>
               <button onClick={() => toggleCompleted(todo.id)}>
                 <span className={todo.completed ? 'toDoCompleted' : ''}>
                   {todo.text}
@@ -65,14 +70,16 @@ function ToDoList() {
             </li>
           </>
         ))}
-
         <input
+          className="inputBar"
           type="text"
           name="todoText"
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
         />
-        <button onClick={handleAddTodo}>Add todo</button>
+        <button className="addButton" onClick={handleAddTodo}>
+          Add
+        </button>
       </div>
     </div>
   )
