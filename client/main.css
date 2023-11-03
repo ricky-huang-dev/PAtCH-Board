@@ -29,6 +29,23 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.slides {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  width: 40vh;
+  height: auto;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.slideButton {
+  border: none;
+  padding: 0;
+}
+
 .stickyNote {
   height: 250px;
   width: 250px;
