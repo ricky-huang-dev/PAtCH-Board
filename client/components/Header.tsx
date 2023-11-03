@@ -1,9 +1,10 @@
-function Header() {
+function Header({ cycleBgStyle, bgStyle }) {
   return (
     <>
       <header>
-        <button className="backgroundButton">Change Background</button>
-        <h1 className="title">PAtCHboaRD</h1>
+        <button onClick={cycleBgStyle} className="backgroundButton">
+          <h1 className={`title t${bgStyle}`}>PAtCHboaRD</h1>
+        </button>
       </header>
     </>
   )

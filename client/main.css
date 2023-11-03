@@ -5,6 +5,19 @@ body {
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin: 0;
+}
+
+.body-zigzag {
+  background-color: #f0eae1;
+}
+
+.body-polka {
+  background-color: black;
+}
+
+.body-cross {
+  background-color: #f7b1ef;
 }
 
 .title {
@@ -28,6 +41,26 @@ body {
   );
 }
 
+.tzigzag {
+  background-color: #fada96;
+  opacity: 0.7;
+  background-image: linear-gradient(135deg, #f7b045 25%, transparent 25%),
+    linear-gradient(225deg, #f7b045 25%, transparent 25%),
+    linear-gradient(45deg, #f7b045 25%, transparent 25%),
+    linear-gradient(315deg, #f7b045 25%, #f3c17f 25%);
+  background-position: 5px 0, 5px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}
+
+.tcross {
+  color: #f745ce;
+}
+
+.tpolka {
+  color: #45f75d;
+}
+
 .board {
   height: 100vh;
   display: grid;
@@ -38,6 +71,7 @@ body {
 }
 
 .ruledLines {
+  margin: 10px;
   border: #5a4423 solid 10px;
   background-color: #faf8f1;
   opacity: 0.8;
@@ -189,4 +223,14 @@ body::-webkit-scrollbar {
   font-size: 18px;
   border: none;
   background-color: transparent;
+}
+
+.backgroundButton {
+  align-self: center;
+  background: transparent;
+  border: none;
+}
+
+header {
+  text-align: center;
 }
