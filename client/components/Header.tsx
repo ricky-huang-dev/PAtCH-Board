@@ -1,7 +1,9 @@
-function Header() {
+function Header({ cycleBgStyle }) {
   return (
     <>
-      <header></header>
+      <header>
+        <button onClick={cycleBgStyle}>Change Background</button>
+      </header>
     </>
   )
 }
