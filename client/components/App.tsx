@@ -25,7 +25,7 @@ function App() {
         bgStyle={backgroundList[bgIndex]}
       />
       <Board bgStyle={backgroundList[bgIndex]}></Board>
-      <Footer />
+      <Footer bgStyle={backgroundList[bgIndex]} />
     </div>
   )
 }

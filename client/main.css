@@ -6,6 +6,7 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   margin: 0;
+  padding: 0;
 }
 
 .body-zigzag {
@@ -53,12 +54,25 @@ body {
   background-repeat: repeat;
 }
 
+.fzigzag {
+  color: #f7b045;
+}
+
 .tcross {
+  color: #f745ce;
+}
+.fcross {
   color: #f745ce;
 }
 
 .tpolka {
   color: #45f75d;
+}
+.fpolka {
+  color: #45f75d;
+}
+.fruledLines {
+  color: #f3e3cb;
 }
 
 .board {
@@ -233,4 +247,10 @@ body::-webkit-scrollbar {
 
 header {
   text-align: center;
+}
+
+footer {
+  color: #f3e3cb;
+  text-align: center;
+  padding-bottom: 5px;
 }
