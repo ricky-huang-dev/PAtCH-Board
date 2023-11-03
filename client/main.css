@@ -76,7 +76,7 @@ body {
 }
 
 .board {
-  height: 100vh;
+  height: 45vh;
   display: grid;
   gap: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -85,7 +85,7 @@ body {
 }
 
 .ruledLines {
-  margin: 10px;
+  margin: 0px 10px;
   border: #5a4423 solid 10px;
   background-color: #faf8f1;
   opacity: 0.8;
@@ -161,7 +161,7 @@ body::-webkit-scrollbar {
 }
 
 .img {
-  width: 40vh;
+  width: 32vh;
   height: auto;
   border: 5px solid white;
   border-radius: 10px;
@@ -170,6 +170,7 @@ body::-webkit-scrollbar {
 .slideButton {
   border: none;
   padding: 0;
+  background: transparent;
 }
 
 .stickyNote {
@@ -269,5 +270,6 @@ header {
 footer {
   color: #f3e3cb;
   text-align: center;
-  padding-bottom: 5px;
+  padding-top: 2vh;
+  padding-bottom: 3vh;
 }
