@@ -5,9 +5,87 @@ body {
   overflow: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.body-zigzag {
+  background-color: #f0eae1;
+}
+
+.body-polka {
+  background-color: black;
+}
+
+.body-cross {
+  background-color: #f7b1ef;
+}
+
+.title {
+  font-size: 50px;
+  font-weight: 600;
+  background-size: 250px;
+  background-repeat: repeat;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-align: center;
+  background-color: #faf8f1;
+  opacity: 0.8;
+  background-size: 10px 10px;
+  background-image: repeating-linear-gradient(
+    0deg,
+    #5a4423,
+    #5a4423 1px,
+    #f3e3cb 1px,
+    #f3e3cb
+  );
+}
+
+.tzigzag {
+  background-color: #fada96;
+  opacity: 0.7;
+  background-image: linear-gradient(135deg, #f7b045 25%, transparent 25%),
+    linear-gradient(225deg, #f7b045 25%, transparent 25%),
+    linear-gradient(45deg, #f7b045 25%, transparent 25%),
+    linear-gradient(315deg, #f7b045 25%, #f3c17f 25%);
+  background-position: 5px 0, 5px 0, 0 0, 0 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}
+
+.fzigzag {
+  color: #f7b045;
+}
+
+.tcross {
+  color: #f745ce;
+}
+.fcross {
+  color: #f745ce;
+}
+
+.tpolka {
+  color: #45f75d;
+}
+.fpolka {
+  color: #45f75d;
+}
+.fruledLines {
+  color: #f3e3cb;
 }
 
 .board {
+  height: 100vh;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 5%;
+  border-radius: 5px;
+}
+
+.ruledLines {
+  margin: 10px;
   border: #5a4423 solid 10px;
   background-color: #faf8f1;
   opacity: 0.8;
@@ -19,12 +97,60 @@ body {
     #f3e3cb 1px,
     #f3e3cb
   );
-  height: 100vh;
-  display: grid;
-  gap: 15px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 5%;
 }
+
+.zigzag {
+  background-color: #e5e5f7;
+  opacity: 0.7;
+  background-image: linear-gradient(135deg, #f7b045 25%, transparent 25%),
+    linear-gradient(225deg, #f7b045 25%, transparent 25%),
+    linear-gradient(45deg, #f7b045 25%, transparent 25%),
+    linear-gradient(315deg, #f7b045 25%, #e5e5f7 25%);
+  background-position: 100px 0, 100px 0, 0 0, 0 0;
+  background-size: 200px 200px;
+  background-repeat: repeat;
+}
+
+.polka {
+  background-color: #000002;
+  opacity: 0.7;
+  background-image: radial-gradient(#45f75d 2px, #000002 2px);
+  background-size: 40px 40px;
+}
+
+.cross {
+  background-color: #f7b1ef;
+  opacity: 0.7;
+  background: radial-gradient(
+      circle,
+      transparent 20%,
+      #f7b1ef 20%,
+      #f7b1ef 80%,
+      transparent 80%,
+      transparent
+    ),
+    radial-gradient(
+        circle,
+        transparent 20%,
+        #f7b1ef 20%,
+        #f7b1ef 80%,
+        transparent 80%,
+        transparent
+      )
+      57.5px 57.5px,
+    linear-gradient(
+        #f745ce 4.6000000000000005px,
+        transparent 4.6000000000000005px
+      )
+      0 -2.3000000000000003px,
+    linear-gradient(
+        90deg,
+        #f745ce 4.6000000000000005px,
+        #f7b1ef 4.6000000000000005px
+      ) -2.3000000000000003px 0;
+  background-size: 115px 115px, 115px 115px, 57.5px 57.5px, 57.5px 57.5px;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -47,8 +173,8 @@ body::-webkit-scrollbar {
 }
 
 .stickyNote {
-  height: 250px;
-  width: 250px;
+  height: 40vh;
+  width: 40vh;
   box-shadow: 5px 10px 10px black;
   overflow: auto;
   -ms-overflow-style: none;
@@ -59,20 +185,36 @@ body::-webkit-scrollbar {
 }
 
 .pink {
-  background: rgb(247, 80, 108);
+  background: linear-gradient(
+    0.4turn,
+    hsl(350, 91%, 64%) 50%,
+    hsl(350, 52%, 47%)
+  );
   transform: rotate(5deg);
 }
 
 .blue {
-  background: rgb(146, 210, 240);
+  background: linear-gradient(
+    0.45turn,
+    rgb(146, 210, 240) 50%,
+    rgb(74, 175, 221)
+  );
   transform: rotate(-3deg);
 }
 .yellow {
-  background: rgb(238, 243, 161);
+  background: linear-gradient(
+    0.5turn,
+    rgb(238, 243, 161) 50%,
+    rgb(226, 235, 107)
+  );
   transform: rotate(2deg);
 }
 .green {
-  background: rgb(170, 230, 114);
+  background: linear-gradient(
+    0.55turn,
+    rgb(170, 230, 114) 40%,
+    rgb(139, 209, 73)
+  );
   transform: rotate(-5deg);
 }
 .noteTitle {
@@ -112,4 +254,20 @@ body::-webkit-scrollbar {
   font-size: 18px;
   border: none;
   background-color: transparent;
+}
+
+.backgroundButton {
+  align-self: center;
+  background: transparent;
+  border: none;
+}
+
+header {
+  text-align: center;
+}
+
+footer {
+  color: #f3e3cb;
+  text-align: center;
+  padding-bottom: 5px;
 }

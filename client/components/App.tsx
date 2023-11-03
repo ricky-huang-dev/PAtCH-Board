@@ -19,10 +19,13 @@ function App() {
   }
 
   return (
-    <div>
-      <Header cycleBgStyle={cycleBackground} />
+    <div className={`body-${backgroundList[bgIndex]}`}>
+      <Header
+        cycleBgStyle={cycleBackground}
+        bgStyle={backgroundList[bgIndex]}
+      />
       <Board bgStyle={backgroundList[bgIndex]}></Board>
-      <Footer />
+      <Footer bgStyle={backgroundList[bgIndex]} />
     </div>
   )
 }
