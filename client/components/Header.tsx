@@ -1,7 +1,10 @@
 function Header() {
   return (
     <>
-      <header></header>
+      <header>
+        <button className="backgroundButton">Change Background</button>
+        <h1 className="title">PAtCHboaRD</h1>
+      </header>
     </>
   )
 }
