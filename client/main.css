@@ -1,5 +1,5 @@
 body {
-  background-color: #faf8f1;
+  background-color: #301b08;
   color: #0a1520;
   font-family: 'Poppins', sans-serif;
   overflow: auto;
@@ -40,6 +40,7 @@ body::-webkit-scrollbar {
 .stickyNote::-webkit-scrollbar {
   display: none;
 }
+
 .pink {
   background: rgb(247, 80, 108);
   transform: rotate(5deg);
@@ -47,15 +48,15 @@ body::-webkit-scrollbar {
 
 .blue {
   background: rgb(146, 210, 240);
-  transform: rotate(5deg);
+  transform: rotate(-3deg);
 }
 .yellow {
   background: rgb(238, 243, 161);
-  transform: rotate(5deg);
+  transform: rotate(2deg);
 }
 .green {
-  background: rgb(201, 243, 161);
-  transform: rotate(5deg);
+  background: rgb(170, 230, 114);
+  transform: rotate(-5deg);
 }
 .noteTitle {
   text-align: center;
@@ -87,4 +88,11 @@ body::-webkit-scrollbar {
 
 .toDoCompleted {
   text-decoration: line-through;
+}
+
+.item {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
 }
