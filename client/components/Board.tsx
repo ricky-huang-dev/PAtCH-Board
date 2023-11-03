@@ -8,10 +8,10 @@ type Props = {
 function Board({ bgStyle }: Props) {
   return (
     <div className={`board ${bgStyle}`}>
-      <StickyNote color={'pink'} heading={'Groceries'} />
-      <StickyNote color={'blue'} heading={'Projects'} />
-      <StickyNote color={'yellow'} heading={'Cleaning'} />
-      <StickyNote color={'green'} heading={'Activities'} />
+      <StickyNote color={'pink'} type="ToDoList" heading={'Groceries'} />
+      <StickyNote color={'blue'} type="ToDoList" heading={'Projects'} />
+      <StickyNote color={'green'} type="ToDoList" heading={'Activities'} />
+      <StickyNote color={'yellow'} type="Slideshow" heading={'Cats'} />
     </div>
   )
 }
