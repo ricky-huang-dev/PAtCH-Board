@@ -70,7 +70,7 @@ function ToDoList(props: Props) {
             >
               x
             </button>
-            <button onClick={() => toggleCompleted(todo.id)}>
+            <button className="item" onClick={() => toggleCompleted(todo.id)}>
               <span className={todo.completed ? 'toDoCompleted' : ''}>
                 {todo.text}
               </span>
