@@ -1,4 +1,9 @@
-function Header({ cycleBgStyle, bgStyle }) {
+type Props = {
+  cycleBgStyle: () => void
+  bgStyle: string
+}
+
+function Header({ cycleBgStyle, bgStyle }: Props) {
   return (
     <>
       <header>

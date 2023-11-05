@@ -7,10 +7,16 @@ function App() {
   const [bgIndex, setBgIndex] = useState(0)
 
   // array of background image styles
-  const backgroundList = ['', 'ruledLines', 'zigzag', 'polka', 'cross']
+  const backgroundList: string[] = [
+    '',
+    'ruledLines',
+    'zigzag',
+    'polka',
+    'cross',
+  ]
 
   // function to swap background images
-  function cycleBackground() {
+  function cycleBackground(): void {
     if (bgIndex === backgroundList.length - 1) {
       setBgIndex(0)
     } else {
@@ -24,7 +30,7 @@ function App() {
         cycleBgStyle={cycleBackground}
         bgStyle={backgroundList[bgIndex]}
       />
-      <Board bgStyle={backgroundList[bgIndex]}></Board>
+      <Board bgStyle={backgroundList[bgIndex]} />
       <Footer bgStyle={backgroundList[bgIndex]} />
     </div>
   )

@@ -20,13 +20,14 @@ function ToDoList(props: Props) {
     e.preventDefault()
 
     const newTodo = {
-      id: todos.length, // Assign a unique id based on the length of the current todos list
+      // Assign a unique id based on the length of the current todos list
+      id: todos.length ? Math.max(...todos.map((todo) => todo.id)) + 1 : 0,
       text: todoText, // Take the text from the input
       completed: false, // Initially set as not completed
     }
 
     // Update the todos state with the new todo and reset the input text
-    setTodos([...todos, newTodo])
+    setTodos((prevTodos) => [...prevTodos, newTodo])
     setTodoText('')
   }
 
@@ -39,19 +40,18 @@ function ToDoList(props: Props) {
 
   // Function to toggle the completed status of a todo
   function toggleCompleted(id: number) {
-    // Map through the todos and toggle the completed status of the todo with the given id
-    const newTodos = [...todos].map((todo) => {
-      if (todo.id === id) {
-        return {
-          ...todo,
-          completed: !todo.completed, // Toggle the completed status
-        }
-      } else {
-        return todo
+    // Find the index of the todo with the given id
+    const index = todos.findIndex((todo) => todo.id === id)
+    if (index !== -1) {
+      // Create a new array with the same todos
+      const newTodos = [...todos]
+      newTodos[index] = {
+        ...newTodos[index],
+        completed: !newTodos[index].completed, // Toggle the completed status
       }
-    })
-    // Update the todos state with the modified list
-    setTodos(newTodos)
+      // Update the todos state with the modified list
+      setTodos(newTodos)
+    }
   }
 
   return (
@@ -77,7 +77,7 @@ function ToDoList(props: Props) {
             </button>
           </li>
         ))}
-        <form onSubmit={(e) => handleAddTodo(e)}>
+        <form onSubmit={handleAddTodo}>
           <input
             className="inputBar"
             type="text"

@@ -1,4 +1,7 @@
-function Footer({ bgStyle }) {
+type Props = {
+  bgStyle: string
+}
+function Footer({ bgStyle }: Props) {
   return (
     <>
       <footer className={`f${bgStyle}`}>
