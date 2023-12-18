@@ -17,6 +17,10 @@ function SlideShow(props: Props) {
   }
   return (
     <div className="SlideshowContainer">
+      <div className="noteTitle">
+        <h1>{props.heading}</h1>
+      </div>
+
       <div className="slides">
         <button type="submit" className="slideButton" onClick={cycleImages}>
           <img className={'img'} alt="cats" src={images[imgIndex]} />
