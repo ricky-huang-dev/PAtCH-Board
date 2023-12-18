@@ -3,7 +3,7 @@ import StickyNote from './StickyNote'
 type Props = {
   bgStyle: string
 }
-
+// changing board background
 function Board({ bgStyle }: Props) {
   return (
     <div className={`board ${bgStyle}`}>
